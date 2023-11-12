@@ -15,8 +15,8 @@ app.listen(process.env.PORT || 4000);
 
 app.use(express.json());
 app.use(cors({
-    //origin : "https://crmfrontend.netlify.app"
-     origin : "http://localhost:3000"
+    origin : "https://crmfrontend-jade.vercel.app/"
+     //origin : "http://localhost:3000"
 }))
 
 const Authenticate = (req,res,next) => {
@@ -281,7 +281,7 @@ app.post('/adminlogin',async function(req,res){
                 res.json({message:"Enter correct Password"})
             }
         } else {
-            console.log(error)
+            
             res.status(401).json({message:"Enter correct Email"})
         }
         await connection.close();
