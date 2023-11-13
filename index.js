@@ -14,10 +14,16 @@ app.listen(process.env.PORT || 4000);
 //middleware
 
 app.use(express.json());
-app.use(cors({
-    origin : "https://crmfrontend-jade.vercel.app/"
+
+
+const corsOptions = {
     // origin : "http://localhost:3000"
-}))
+    origin: "https://crmfrontend-jade.vercel.app",
+    optionsSuccessStatus: 200,
+  };
+  
+  app.use(cors(corsOptions));
+  
 
 const Authenticate = (req,res,next) => {
     if (req.headers.authorization) {
