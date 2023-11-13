@@ -16,7 +16,7 @@ app.listen(process.env.PORT || 4000);
 app.use(express.json());
 app.use(cors({
     origin : "https://crmfrontend-jade.vercel.app/"
-     //origin : "http://localhost:3000"
+    // origin : "http://localhost:3000"
 }))
 
 const Authenticate = (req,res,next) => {
